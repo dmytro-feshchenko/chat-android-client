@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "322465357248",
+    "firebase_url": "https://moonly-f8220.firebaseio.com",
+    "project_id": "moonly-f8220",
+    "storage_bucket": "moonly-f8220.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:322465357248:android:cb8698b5d5b8d289",
+        "android_client_info": {
+          "package_name": "com.moonly.chat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "322465357248-d3qko82r5iqts49ouhjjhuvloberfkkd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBheCew3gVX95npyTwV8wcqUZXeZUnQXKw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
