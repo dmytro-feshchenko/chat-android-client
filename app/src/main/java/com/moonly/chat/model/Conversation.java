@@ -1,6 +1,7 @@
 package com.moonly.chat.model;
 
 import java.util.Date;
+import com.moonly.chat.UserList;
 
 /**
  * Created by dmitryi on 10/16/16.
@@ -40,10 +41,46 @@ public class Conversation {
     }
 
     public boolean isSent () {
-        return UserList
+        return UserList.user.getId().contentEquals(sender);
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public String getReceiver() {
+        return receiver;
+    }
+
+    public void setReceiver(String receiver) {
+        this.receiver = receiver;
     }
 
     public String getSender() {
         return this.sender;
+    }
+
+    public void setSender(String sender) {
+        this.sender = sender;
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
+    public String getPhotoUrl() {
+        return photoUrl;
+    }
+
+    public void setPhotoUrl(String photoUrl) {
+        this.photoUrl = photoUrl;
     }
 }
