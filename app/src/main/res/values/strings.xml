@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Moonly Chat</string>
+
+    <string name="email">Email</string>
+    <string name="displayName">Display Name</string>
+    <string name="password">Password</string>
+    <string name="register">Register</string>
+
+    <string name="log_in">Log in</string>
+    <string name="forgot_my_pwd">I’ve forgotten my password?</string>
 </resources>
