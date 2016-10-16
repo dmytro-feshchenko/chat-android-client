@@ -24,7 +24,7 @@
             android:layout_marginBottom="@dimen/pad_20dp" />
 
         <EditText
-            android:id="@+id/displayName"
+            android:id="@+id/username"
             style="@style/editext_graybg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -49,7 +49,7 @@
         </EditText>
 
         <EditText
-            android:id="@+id/pwd"
+            android:id="@+id/password"
             style="@style/editext_graybg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -67,7 +67,7 @@
             android:orientation="horizontal" >
 
             <Button
-                android:id="@+id/btnReg"
+                android:id="@+id/btnRegistration"
                 style="@style/btn_white_large"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
