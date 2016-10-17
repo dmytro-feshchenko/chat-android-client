@@ -45,7 +45,6 @@
             android:hint="@string/email"
             android:inputType="textEmailAddress" >
 
-            <requestFocus />
         </EditText>
 
         <EditText

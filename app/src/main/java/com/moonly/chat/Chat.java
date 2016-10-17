@@ -24,6 +24,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.moonly.chat.custom.CustomActivity;
@@ -80,7 +81,33 @@ public class Chat extends CustomActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        // realtime
+        DatabaseReference myRef = FirebaseDatabase.getInstance().getReference("messages");
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                if (user != null) {
+                    for (DataSnapshot ds: dataSnapshot.getChildren()) {
+                        Conversation conversation = ds.getValue(Conversation.class);
+                        if ((conversation.getReceiver().contentEquals(user.getUid()) && conversation.getSender().contentEquals(interviewer.getId()))
+                                || (conversation.getReceiver().contentEquals(interviewer.getId()) && conversation.getSender().contentEquals(user.getUid()))) {
+                            conversationsList.add(conversation);
+                            if (lastMessageDate == null || lastMessageDate.before(conversation.getDate()))
+                                lastMessageDate = conversation.getDate();
+                            chatAdapter.notifyDataSetChanged();
+                        }
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
         loadConversationList();
+
     }
 
     @Override
@@ -153,6 +180,7 @@ public class Chat extends CustomActivity {
      * message that will be used to load only recent new messages
      */
     private void loadConversationList() {
+        conversationsList.clear();
         FirebaseDatabase.getInstance().getReference("messages").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -160,7 +188,8 @@ public class Chat extends CustomActivity {
                 if (user != null) {
                     for (DataSnapshot ds: dataSnapshot.getChildren()) {
                         Conversation conversation = ds.getValue(Conversation.class);
-                        if (conversation.getReceiver().contentEquals(user.getUid()) || conversation.getSender().contentEquals(user.getUid())) {
+                        if ((conversation.getReceiver().contentEquals(user.getUid()) && conversation.getSender().contentEquals(interviewer.getId()))
+                                || (conversation.getReceiver().contentEquals(interviewer.getId()) && conversation.getSender().contentEquals(user.getUid()))) {
                             conversationsList.add(conversation);
                             if (lastMessageDate == null || lastMessageDate.before(conversation.getDate()))
                                 lastMessageDate = conversation.getDate();

@@ -50,9 +50,10 @@
 
         <LinearLayout
             android:id="@+id/main"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal" >
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
 
             <Button
                 android:id="@+id/btnLogin"
@@ -64,12 +65,12 @@
 
             <Button
                 android:id="@+id/btnRegistration"
-                style="@style/btn_white_large"
+                style="@style/btn_link"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/register"
-                android:layout_marginLeft="@dimen/pad_10dp"/>
+                android:text="@string/create_new_account"
+                android:layout_marginTop="@dimen/pad_10dp"/>
         </LinearLayout>
 
     </LinearLayout>

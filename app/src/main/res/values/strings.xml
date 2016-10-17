@@ -4,9 +4,10 @@
     <string name="type_msg">Type message</string>
 
     <string name="email">Email</string>
-    <string name="displayName">Display Name</string>
+    <string name="displayName">Username</string>
     <string name="password">Password</string>
     <string name="register">Register</string>
+    <string name="create_new_account">Create new account</string>
 
     <string name="log_in">Log in</string>
     <string name="forgot_my_pwd">I’ve forgotten my password?</string>
