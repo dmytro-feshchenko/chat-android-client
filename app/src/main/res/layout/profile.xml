@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/pad_15dp"
+        android:paddingRight="@dimen/pad_15dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/pad_20dp"
+            android:paddingBottom="@dimen/pad_20dp">
+
+            <WebView
+                android:layout_width="100dp"
+                android:layout_marginTop="30dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:id="@+id/webView" />
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/username"
+            style="@style/editext_graybg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_username"
+            android:drawableStart="@drawable/ic_username"
+            android:hint="@string/hint_username">
+
+            <requestFocus />
+        </EditText>
+
+
+        <EditText
+            android:id="@+id/email"
+            style="@style/editext_graybg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_username"
+            android:drawableStart="@drawable/ic_email"
+            android:layout_marginTop="@dimen/pad_20dp"
+            android:hint="@string/hint_email">
+
+        </EditText>
+
+        <Button
+            android:id="@+id/buttonChangePassword"
+            style="@style/btn_white_large"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="@string/change_pwd_button"
+            android:layout_marginTop="@dimen/pad_20dp" />
+
+        <Button
+            android:id="@+id/buttonSave"
+            style="@style/btn_white_large"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="@string/save_button"
+            android:layout_marginTop="@dimen/pad_20dp" />
+
+    </LinearLayout>
+</ScrollView>

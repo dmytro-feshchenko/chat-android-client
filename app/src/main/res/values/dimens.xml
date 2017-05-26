@@ -19,4 +19,9 @@
     <dimen name="txt_16sp">16sp</dimen>
     <dimen name="txt_18sp">18sp</dimen>
     <dimen name="txt_20sp">20sp</dimen>
+
+
+    <dimen name="conversation_img_size">80dp</dimen>
+    <dimen name="pad_badge_vertical">5dp</dimen>
+    <dimen name="pad_badge_horizontal">10dp</dimen>
 </resources>

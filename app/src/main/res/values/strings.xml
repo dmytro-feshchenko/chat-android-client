@@ -24,4 +24,28 @@
     <string name="delivered_text">Delivered</string>
     <string name="sending_text">Sending…</string>
     <string name="failed_text">Failed</string>
+
+
+
+    <string name="room_content_description">Conversation image</string>
+    <string name="conversation_default_name">Conversation name</string>
+    <string name="conversation_default_description">conversation description</string>
+
+    <string name="change_pwd_button">Change Password</string>
+    <string name="save_button">Save Changes</string>
+
+    <string name="hint_username">Username</string>
+    <string name="hint_email">Email</string>
+
+    <string name="hint_old_password">Old password</string>
+    <string name="hint_new_password">New password</string>
+    <string name="hint_repeat_password">Repeat password</string>
+    <string name="hint_code">Code</string>
+
+    <string name="toggle_push_notifications">Enable push notifications:</string>
+    <string name="toggle_email_notifications">Enable email notifications:</string>
+    <string name="show_message_preview">Show message preview for new messages</string>
+    <string name="sounds_for_incoming_messages">Sounds for incoming messages</string>
+    <string name="ring_on_incoming_calls">Ring on incoming phone calls</string>
+    <string name="convert_emoji">Convert text to emoji</string>
 </resources>

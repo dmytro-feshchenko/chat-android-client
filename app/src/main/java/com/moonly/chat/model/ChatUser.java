@@ -1,7 +1,5 @@
 package com.moonly.chat.model;
 
-import com.google.firebase.database.IgnoreExtraProperties;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -9,7 +7,6 @@ import java.util.ArrayList;
  * Created by dmitryi on 10/16/16.
  * Class that represents a single chat user.
  */
-@IgnoreExtraProperties
 public class ChatUser implements Serializable {
     private String id;
     private String username;
