@@ -3,13 +3,16 @@ package com.moonly.chat;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 import com.moonly.chat.custom.CustomActivity;
 import com.moonly.chat.model.ChatUser;
 import com.moonly.chat.utils.Utils;
@@ -59,34 +62,26 @@ public class Login extends CustomActivity {
                 return;
             }
 
-
             // user authentication
-//            FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password)
-//                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-//                    @Override
-//                    public void onComplete(@NonNull Task<AuthResult> task) {
-//                        Logger.getLogger(Login.class.getName()).log(Level.ALL, "signInWithEmail:onComplete:" + task.isSuccessful());
-//                        loginProgressDialog.dismiss();
-//                        if (!task.isSuccessful()) {
-//                            Logger.getLogger(Login.class.getName()).log(Level.ALL, "signInWithEmail", task.getException());
-//                            Toast.makeText(Login.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
-//                        }
-//                        else {
-//                            ArrayList<String> defaultRoom = new ArrayList<String>();
-//                            defaultRoom.add("home");
-//                            UserList.user = new ChatUser(task.getResult().getUser().getUid(), task.getResult().getUser().getDisplayName(), task.getResult().getUser().getEmail(), true, defaultRoom);
-//                            startActivity(new Intent(Login.this, UserList.class));
-//                            finish();
-//                        }
-//                    }
-//                });
-
-            // save login state into share preferences
-            SharedPreferences sp = getSharedPreferences("Login", 0);
-            SharedPreferences.Editor Ed = sp.edit();
-            Ed.putString("Unm", email);
-            Ed.putString("Psw", password);
-            Ed.apply();
+            FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            Logger.getLogger(Login.class.getName()).log(Level.ALL, "signInWithEmail:onComplete:" + task.isSuccessful());
+                            loginProgressDialog.dismiss();
+                            if (!task.isSuccessful()) {
+                                Logger.getLogger(Login.class.getName()).log(Level.ALL, "signInWithEmail", task.getException());
+                                Toast.makeText(Login.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
+                            }
+                            else {
+                                ArrayList<String> defaultRoom = new ArrayList<String>();
+                                defaultRoom.add("home");
+                                UserList.user = new ChatUser(task.getResult().getUser().getUid(), task.getResult().getUser().getDisplayName(), task.getResult().getUser().getEmail(), true, defaultRoom);
+                                startActivity(new Intent(Login.this, UserList.class));
+                                finish();
+                            }
+                        }
+                    });
 
             loginProgressDialog = ProgressDialog.show(this, null, getString(R.string.alert_wait));
         }

@@ -5,11 +5,19 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [1.0.0] - 2017-09-23
 ### Added
 - CHANGELOG
 - README with project description
+- Screenshots to the README.md
 
-## 1.1.0 - 2017-05-26
+### Changed
+- Gradle Build Tools from 2.2.1 to 2.3.2 
+- Android Build Tools from 24.0.3 to 25.0.0
+- Updated all models to the latest versions from original project
+
+## 0.1.0 - 2017-05-26
 ### Added
 - Layouts for settings, change password form
 - Added Firebase SDK to login and registration
@@ -21,7 +29,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Removed
 - Main activity (replaced with MoonlyApp)
 
-## 1.0.1 - 2016-10-17
+## 0.0.3 - 2016-10-17
 ### Added
 - Resources for buttons and text fields
 
@@ -31,7 +39,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Fixed
 - Issue with duplicated messages in chat caused by weak internet session
 
-## [1.0.0] - 2016-10-16
+## [0.0.2] - 2016-10-16
 ### Added
 - Login form design and logic
 - Registration form design and logic
@@ -43,8 +51,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 - Color schema
 - Updated AndroidManifest.xml: added new types of activities and permissions
-
-### Changed
 - Replaced default Android app icons with designed icons
 
 ## 0.0.1 - 2016-10-15
